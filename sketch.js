@@ -22,6 +22,8 @@ let winText = {
 
 let gameMusic = "false";
 
+
+
 let openingMusic = {
 state : 'false'
 }
@@ -195,13 +197,14 @@ function draw() {
     openingMusic.music.stop();
     battleMusic.music.stop();
     gameMusic = "false";
+    
   }
 
   if(gameStatus == 'true'){
 
 
     if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
-      timer --;
+      timer = timer - 1;
     }
     if (timer == 0) {
       text("GAME OVER", width/2, height/5);
